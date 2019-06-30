@@ -1,8 +1,6 @@
 <template>
 <div>
     <GoBack />
-    <div  v-for="(destination,index) in destinations" :key="index">     
-        <div v-if="location == destination.slug">      
             <h1>{{destination.name}}</h1>      
             <div class="destination-details">
                 <img :src="require(`@/assets/${destination.image}.jpg`)" />
@@ -29,8 +27,6 @@
                     </router-link>
                     </div>
                 </div>
-            </div>
-         </div>
     </div>
 </template>
 
@@ -48,9 +44,16 @@ import GoBack from '@/components/GoBack'
         },
         data: function () {
             return {
-                destinations: store.destinations,
+            
             }
          },
+        computed: {
+            destination() {
+            return store.destinations.find(
+                (destination) => destination.slug === this.location
+            )
+            },
+        },
     }
 </script>
 

@@ -2,24 +2,14 @@
     <div>
         <GoBack />
         <h1>experiences</h1>
-        <div v-for="destination in destinations" :key="destination.slug">
-            <div v-if="location == destination.slug">
-                <div v-for="exp in destination.experiences" :key="exp.slug">
-                <div v-if="experience == exp.slug">
-                    <h2>{{ exp.title }}</h2>
-                    <div>
-                    <div class="experience-details">
-                        <img
-                        :src="require(`@/assets/${exp.image}.jpg`)"
-                        alt="experience.title"
-                        />
-                        <p> {{ exp.description }}</p>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>    
-      </div>
+        <h2>{{ exp.name }}</h2>
+             <div class="experience-details">
+                <img
+                    :src="require(`@/assets/${exp.image}.jpg`)"
+                    :alt="exp.name"
+                />
+                <p> {{ exp.description }}</p>
+            </div>                
     </div>
 </template>
 
@@ -42,9 +32,21 @@
         },
         data: function() {
             return {
-                destinations: store.destinations,
+                
             }
-        }
+        },
+        computed: {
+            destination() {
+            return store.destinations.find(
+                (destination) => destination.slug === this.location
+            )
+            },
+            exp() {
+            return this.destination.experiences.find(
+                (experience) => experience.slug === this.experience
+            )
+            },
+        },
 }
 </script>
 
