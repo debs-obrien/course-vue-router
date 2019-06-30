@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navigation />
-    <transition name="moveUp">
+    <transition name="fade">
       <router-view :key="$route.path" />
     </transition>
   </div>
