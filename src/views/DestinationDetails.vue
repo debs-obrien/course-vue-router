@@ -40,10 +40,15 @@ import GoBack from '@/components/GoBack'
 
     export default {
         components: { GoBack },
+        props: {
+            location: {
+            type: String,
+            required: true,
+            },
+        },
         data: function () {
             return {
                 destinations: store.destinations,
-                location:this.$route.params.location,
             }
          },
     }
