@@ -6,7 +6,7 @@
           <router-link to="/">Home</router-link>
          </li> 
           <li v-for="destination in destinations" :key="destination.name" class="links">
-            <router-link :to="{ name: 'DestinationDetails', params: { id:destination.id }}">                
+            <router-link :to="{ name: 'DestinationDetails', params: { location:destination.slug }}">                
               {{ destination.name }}
              </router-link>
           </li>

@@ -5,6 +5,7 @@ import Home from "./views/Home.vue";
 Vue.use(Router);
 
 export default new Router({
+  mode: "history",
   routes: [
     {
       path: "/",
@@ -12,7 +13,7 @@ export default new Router({
       component: Home
     },
     {
-      path: "/details/:id",
+      path: "/details/:location",
       name: "DestinationDetails",
       component: () =>
         import(/* webpackChunkName: "DestinationDetails" */ "./views/DestinationDetails.vue")
