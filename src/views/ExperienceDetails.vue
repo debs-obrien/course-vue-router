@@ -1,5 +1,6 @@
 <template>
     <div>
+        <GoBack />
         <h1>experiences</h1>
         <div v-for="destination in destinations" :key="destination.slug">
             <div v-if="location == destination.slug">
@@ -26,8 +27,10 @@
 <script>
 
     import store from '@/store.js'
+    import GoBack from '@/components/GoBack'
 
     export default {
+        components: { GoBack },
         data: function() {
             return {
             destinations: store.destinations,
