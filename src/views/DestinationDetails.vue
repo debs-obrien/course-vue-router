@@ -17,7 +17,7 @@
                     >
                     <router-link
                         :to="{
-                            name: 'ExperienceDetails',
+                            name: 'experienceDetails',
                             params: { experience: experience.slug },
                         }"
                     >
@@ -29,14 +29,13 @@
                     </router-link>
                     </div>
                 </div>
-            </div>    
+            </div>
          </div>
     </div>
 </template>
 
 <script>
 import store from '@/store.js'
-
 import GoBack from '@/components/GoBack'
 
     export default {

@@ -14,15 +14,22 @@ export default new Router({
     },
     {
       path: "/details/:location",
-      name: "DestinationDetails",
+      name: "destinationDetails",
       component: () =>
         import(/* webpackChunkName: "DestinationDetails" */ "./views/DestinationDetails.vue")
     },
     {
       path: "/details/:location/:experience",
-      name: "ExperienceDetails",
+      name: "experienceDetails",
       component: () =>
         import(/* webpackChunkName: "ExperienceDetails" */ "./views/ExperienceDetails.vue")
+    },
+
+{
+      path: "*",
+      name: "Not Found",
+      component: () =>
+        import(/* webpackChunkName: "Not Found" */ "./views/NotFound.vue")
     }
   ]
 });

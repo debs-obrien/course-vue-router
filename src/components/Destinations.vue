@@ -6,11 +6,11 @@
                 :key="destination.name" 
                 class="destinations"
             >
-                <router-link :to="{ name: 'DestinationDetails', params: { location:destination.slug }}">                
+                <router-link :to="{ name: 'destinationDetails', params: { location:destination.slug }}">                
                     <h2 >{{ destination.name }}</h2>
                 </router-link>
                 <figure>
-                    <router-link :to="{ name: 'DestinationDetails', params: { location:destination.slug }}">                 
+                    <router-link :to="{ name: 'destinationDetails', params: { location:destination.slug }}">                 
                         <img :src="require(`@/assets/${destination.image}.jpg`)"/>
                     </router-link>
                 </figure>
