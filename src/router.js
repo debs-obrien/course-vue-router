@@ -15,11 +15,20 @@ export default new Router({
       props: true
     },
     {
-      path: "/details/:location",
+      path: "/destination/:location",
       name: "destinationDetails",
       props: true,
       component: () =>
         import(/* webpackChunkName: "DestinationDetails" */ "./views/DestinationDetails.vue"),
+      children: [
+        {
+          path: ":experience",
+          name: "experienceDetails",
+          props: true,
+          component: () =>
+            import(/* webpackChunkName: "ExperienceDetails" */ "./views/ExperienceDetails.vue"),
+        }
+      ],
       beforeEnter: (to, from, next) => {
         const slug = to.params.location;
         if (store.destinations.find(destination => destination.slug === slug)) {
@@ -29,13 +38,7 @@ export default new Router({
         }
       }
     },
-    {
-      path: "/details/:location/:experience",
-      name: "experienceDetails",
-      props: true,
-      component: () =>
-        import(/* webpackChunkName: "ExperienceDetails" */ "./views/ExperienceDetails.vue"),
-    },
+    
     {
       path: "*",
       name: "notFound",

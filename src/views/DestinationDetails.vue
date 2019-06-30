@@ -27,6 +27,7 @@
                     </router-link>
                     </div>
                 </div>
+                <router-view :key="$route.path" />
     </div>
 </template>
 
