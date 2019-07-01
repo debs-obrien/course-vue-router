@@ -7,7 +7,7 @@
                 <p>{{destination.description}}</p>
             </div>
             <h2>Top experiences in {{ destination.name }}</h2>
-            <div class="experiences">
+            <div class="experiences" id="experience">
                 <div
                     v-for="experience in destination.experiences"
                     :key="experience.slug"
@@ -17,6 +17,7 @@
                         :to="{
                             name: 'experienceDetails',
                             params: { experience: experience.slug },
+                            hash: '#experience',
                         }"
                     >
                     <img

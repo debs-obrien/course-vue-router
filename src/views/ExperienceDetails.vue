@@ -1,7 +1,5 @@
 <template>
     <div>
-        <GoBack />
-        <h1>experiences</h1>
         <h2>{{ exp.name }}</h2>
              <div class="experience-details">
                 <img
@@ -16,10 +14,9 @@
 <script>
 
     import store from '@/store.js'
-    import GoBack from '@/components/GoBack'
 
     export default {
-        components: { GoBack },
+        components: {  },
         props: {
             location: {
                 type: String,

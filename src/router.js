@@ -7,6 +7,32 @@ Vue.use(Router);
 
 export default new Router({
   mode: "history",
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      // savedPosition is only available for popstate navigations.
+      return savedPosition;
+    } else {
+      const position = {};
+
+      // scroll to anchor by returning the selector
+      if (to.hash) {
+        position.selector = to.hash;
+
+        // specify offset of the element
+        if (to.hash === "#experience") {
+          position.offset = { y: 10 };
+        }
+
+        if (document.querySelector(to.hash)) {
+          return position;
+        }
+
+        // if the returned position is falsy or an empty object,
+        // will retain current scroll position.
+        return false;
+      }
+    }
+  },
   routes: [
     {
       path: "/",
@@ -26,7 +52,7 @@ export default new Router({
           name: "experienceDetails",
           props: true,
           component: () =>
-            import(/* webpackChunkName: "ExperienceDetails" */ "./views/ExperienceDetails.vue"),
+            import(/* webpackChunkName: "ExperienceDetails" */ "./views/ExperienceDetails.vue")
         }
       ],
       beforeEnter: (to, from, next) => {
@@ -38,7 +64,7 @@ export default new Router({
         }
       }
     },
-    
+
     {
       path: "*",
       name: "notFound",
