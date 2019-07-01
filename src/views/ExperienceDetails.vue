@@ -57,6 +57,7 @@ img {
 .experience-details {
   display: flex;
   justify-content: space-between;
+  padding: 40px 0;
 }
 p {
   margin: 0 40px;

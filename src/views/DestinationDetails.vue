@@ -69,6 +69,7 @@ img{
 .destination-details{
     display:flex;
     justify-content: space-between;
+    margin-bottom: 60px;
 }
 p{
     margin: 0 40px;
@@ -78,6 +79,7 @@ p{
 .experiences {
   display: flex;
   justify-content: space-between;
+  padding: 40px 0;
 }
 .experiences img {
   max-height: 200px;
