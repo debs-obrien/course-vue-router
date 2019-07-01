@@ -64,7 +64,13 @@ export default new Router({
         }
       }
     },
-
+    {
+      path: "/user",
+      name: "user",
+      component: () =>
+        import(/* webpackChunkName: "User" */ "./views/User.vue"),
+      meta: { requiresAuth: true }
+    },
     {
       path: "*",
       name: "notFound",

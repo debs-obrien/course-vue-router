@@ -10,6 +10,7 @@
               {{ destination.name }}
              </router-link>
           </li>
+          <li class="links"><router-link to="/user">My Profile</router-link></li>
         </ul>
     </nav>
 </template>
