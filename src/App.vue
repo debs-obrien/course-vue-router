@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <Navigation />
+    <TheNavigation />
     <transition name="fade" mode="out-in">
       <router-view :key="$route.path" />
     </transition>
   </div>
 </template>
 <script>
-import Navigation from '@/components/Navigation.vue'
+import TheNavigation from "@/components/TheNavigation.vue";
 export default {
-    components: {
-      Navigation
-    }
-}
+  components: {
+    TheNavigation
+  }
+};
 </script>
 <style>
 #app {

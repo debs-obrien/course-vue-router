@@ -7,6 +7,7 @@ Vue.use(Router);
 
 export default new Router({
   mode: "history",
+  linkExactActiveClass: "active-link",
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       // savedPosition is only available for popstate navigations.
