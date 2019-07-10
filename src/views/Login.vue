@@ -19,7 +19,8 @@ export default {
   methods: {
     login () {
       store.user = this.username
-      this.$router.push('/')
+      const redirectPath = this.$route.query.redirect || '/'
+      this.$router.push(redirectPath)
     }
   }
 };
