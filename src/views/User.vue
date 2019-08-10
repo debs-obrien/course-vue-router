@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h1>Welcome {{user}}</h1>
+    <h1>Welcome {{ user }}</h1>
     <button @click="logOut">Log Out</button>
   </div>
 </template>
 
 <script>
-import store from '@/store'
+import store from "@/store";
 
 export default {
   data() {
@@ -16,8 +16,8 @@ export default {
   },
   methods: {
     logOut() {
-      store.user = null
-      this.$router.push('/')
+      store.user = null;
+      this.$router.push("/");
     }
   }
 };
