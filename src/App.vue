@@ -65,4 +65,9 @@ export default {
     transform: translateY(-400px);
   }
 }
+button{
+  background-color:green;
+  color: white;
+  padding: 10px;
+}
 </style>

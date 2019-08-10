@@ -1,9 +1,13 @@
 <template>
-  <div>
+  <div class="login">
     <h1>Login</h1>
-    <input v-model="username" />
+    <div class="form">
+    <label for="username">Username</label>
+    <input v-model="username" name="username" />
+    <label for="password">Password</label>
     <input v-model="password" type="password" />
-    <button @click="login">Log In</button>
+    <button @click="logIn">Log In</button>
+    </div>
   </div>
 </template>
 
@@ -13,11 +17,11 @@ export default {
   data() {
     return {
       username: null,
-      password: null
+      password: null,
     };
   },
   methods: {
-    login () {
+    logIn() {
       store.user = this.username
       const redirectPath = this.$route.query.redirect || '/'
       this.$router.push(redirectPath)
@@ -26,4 +30,18 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.form{
+  display:flex;
+  flex-direction: column;
+  max-width:400px;
+  margin: 0 auto;
+}
+
+input{
+  border: 1px solid green;
+  padding: 10px;
+  margin-bottom:20px;
+}
+
+</style>
