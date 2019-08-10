@@ -1,4 +1,6 @@
-# travel-app
+# travel-app using vue router
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/075d7abc-1084-4d8d-8ccd-f5620fd8c19d/deploy-status)](https://app.netlify.com/sites/vue-router-course/deploys)
 
 ## Project setup
 ```
